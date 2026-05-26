@@ -1,4 +1,13 @@
 def month_to_season(month):
+    """
+    Определяет сезон по номеру месяца.
+
+    Args:
+        month (int): Номер месяца (1-12)
+
+    Returns:
+        str: Название сезона ("Зима", "Весна", "Лето", "Осень")
+    """
     if month in [12, 1, 2]:
         return "Зима"
     elif month in [3, 4, 5]:
@@ -8,13 +17,16 @@ def month_to_season(month):
     elif month in [9, 10, 11]:
         return "Осень"
     else:
-        return "Неверный номер месяца"
+        return "Неверный номер месяца"  # обработка ошибочного ввода
 
 
-print(f"Месяц 1: {month_to_season(1)}")
-print(f"Месяц 2: {month_to_season(2)}")
-print(f"Месяц 3: {month_to_season(3)}")
-print(f"Месяц 6: {month_to_season(6)}")
-print(f"Месяц 9: {month_to_season(9)}")
-print(f"Месяц 12: {month_to_season(12)}")
-print(f"Месяц 13: {month_to_season(13)}")
+# Примеры использования
+print(f"Месяц 2: {month_to_season(2)}")  # Зима
+print(f"Месяц 5: {month_to_season(5)}")  # Весна
+print(f"Месяц 7: {month_to_season(7)}")  # Лето
+print(f"Месяц 10: {month_to_season(10)}")  # Осень
+
+# Сохраняем результат в переменную
+month_number = 12
+season = month_to_season(month_number)
+print(f"Месяц {month_number}: {season}")

@@ -2,11 +2,31 @@ import math
 
 
 def square(side):
+    """
+    Вычисляет площадь квадрата.
+
+    Args:
+        side (int or float): Сторона квадрата
+
+    Returns:
+        int: Площадь квадрата (округленная вверх, если сторона не целая)
+    """
     area = side * side
-    if type(side) != int:
+
+    # Если сторона не целая (проверяем, отличается ли число от целого)
+    if not isinstance(side, int) and side % 1 != 0:
         area = math.ceil(area)
+
     return area
 
 
-print(square(4))
-print(square(4.3))
+# Примеры использования
+print(f"Сторона 5: {square(5)}")  # 25
+print(f"Сторона 3.5: {square(3.5)}")  # 12.25 → округляем до 13
+print(f"Сторона 2.1: {square(2.1)}")  # 4.41 → округляем до 5
+print(f"Сторона 4.0: {square(4.0)}")  # 16.0 → 16 (целое число)
+
+# Сохраняем результат в переменную и выводим
+side_length = 4.7
+result = square(side_length)
+print(f"Сторона {side_length}: площадь = {result}")

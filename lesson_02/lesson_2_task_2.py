@@ -1,9 +1,27 @@
 def is_year_leap(year):
+    """
+    Проверяет, является ли год високосным.
+
+    Args:
+        year (int): Год для проверки
+
+    Returns:
+        bool: True если год високосный, False если нет
+    """
     return year % 4 == 0
 
 
-years = [2033, 2208, 2011, 2222, 2024, 1201]
+# Выберите год для проверки
+year_to_check = 2024
 
-for year in years:
-    result = is_year_leap(year)
-    print(f"год {year}: {result}")
+# Вызываем функцию и сохраняем результат в переменную
+result = is_year_leap(year_to_check)
+
+# Выводим результат в нужном формате
+print(f"год {year_to_check}: {result}")
+
+# Дополнительные примеры для демонстрации
+print(f"год 2023: {is_year_leap(2023)}")
+print(f"год 2008: {is_year_leap(2008)}")
+print(f"год 2009: {is_year_leap(2009)}")
+print(f"год 2020: {is_year_leap(2020)}")
